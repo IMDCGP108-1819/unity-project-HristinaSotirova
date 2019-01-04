@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shot : MonoBehaviour {
+public class Shot : MonoBehaviour
+{
 
     public float speed;
-
+    public int damage = 1;
     private Rigidbody2D rb;
 
     void Start () {
@@ -16,4 +17,14 @@ public class shot : MonoBehaviour {
        
     }
 	
+    void OnTriggerEnter2D (Collider2D hitInfo)
+    {
+        Hazard hazard = hitInfo.GetComponent<Hazard>();
+        if (hazard != null)
+        {
+            hazard.TakeDamage(damage);
+        }
+        Destroy(gameObject);
+    }
+
 }

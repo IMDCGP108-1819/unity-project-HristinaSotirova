@@ -9,36 +9,23 @@ public class Boundaries
 }
 
 
-public class playerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
 
     public float speed;
     public Boundaries boundaries;
 
     private Rigidbody2D rb;
 
-    public GameObject shot;
-    public Transform shotSpawn;
-    public float spawnTime;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        InvokeRepeating("Shot", spawnTime, spawnTime);
-    }
-            
-    void Shot()
-    {
-        GameObject item = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-        Destroy(item, 3f);
-    }
-
     void FixedUpdate()
     {
+        rb = GetComponent<Rigidbody2D>();
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb.AddForce(movement*speed);
+        rb.AddForce(movement * speed);
 
+        //code keeps player within play field
         rb.position = new Vector2
             (
             Mathf.Clamp (rb.position.x, boundaries.xMin, boundaries.xMax),
