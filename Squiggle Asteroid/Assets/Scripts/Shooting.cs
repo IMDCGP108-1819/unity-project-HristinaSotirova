@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour {
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public GameObject shot;
     public Transform shotSpawn;
     public float spawnTime;

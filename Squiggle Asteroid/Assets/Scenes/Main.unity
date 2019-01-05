@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &2056436414
 Animator:
   serializedVersion: 3
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4937bb0786abe8848b662fef5576b957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 75
+  speed: 85
   boundaries:
     xMin: -2
     xMax: 2
@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875260de0839c024f8d7b9ba8986a6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 50378286760141232, guid: 5bbde6fcb5a1efb449158d7c0ef2e815, type: 2}
   shot: {fileID: 1443723856718816, guid: 5bbde6fcb5a1efb449158d7c0ef2e815, type: 2}
   shotSpawn: {fileID: 995896689}
   spawnTime: 0.25
@@ -487,6 +488,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hazard: {fileID: 1059026085916138, guid: 5dfa31498e9553b498ca3200e9a65450, type: 2}
   spawnValues: {x: 2, y: 9.15}
+  hazardCount: 10
+  spawnWait: 0.5
+  startWait: 1
+  waveWait: 4
 --- !u!4 &2103640362
 Transform:
   m_ObjectHideFlags: 0

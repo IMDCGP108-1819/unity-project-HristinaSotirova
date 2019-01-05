@@ -12,7 +12,7 @@ public class Shot : MonoBehaviour
     void Start () {
 
         rb = GetComponent<Rigidbody2D>();
-        Vector2 movement = new Vector2(0.0f, 1);
+        Vector2 movement = new Vector2(0.0f, 3);
         rb.AddForce(movement * speed);
        
     }
