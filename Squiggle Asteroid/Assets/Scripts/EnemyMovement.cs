@@ -2,38 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, yMin, yMax;
+}
 
 public class EnemyMovement : MonoBehaviour {
 
     public float speed;
-
     private Rigidbody2D rb;
-
-    private float move;
-    public float movement;
-    public Vector2 startWait;
-    public Vector2 movementTime;
-    public Vector2 movementWait;
+    public Boundary boundary;
 
     void Start()
+    {
+        
+        
+    }
+
+    void FixedUpdate()
     {
         rb = GetComponent<Rigidbody2D>();
         Vector2 movement = new Vector2(0.0f, 1);
         rb.AddForce(movement * speed);
-        StartCoroutine(Move());
+
+        rb.position = new Vector2
+            (
+            Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(rb.position.y, boundary.yMin, boundary.yMax)
+            );
     }
 
-    IEnumerator Move()
-    {
-        yield return new WaitForSeconds(Random.Range(startWait.x, startWait.y));
-        while (true)
-        {
-            move = Random.Range(1, move) * -Mathf.Sign(transform.position.x;
-            yield return new WaitForSeconds();
-            move = 0;
-            yield return new WaitForSeconds();
-        }
-    }
 
 }
