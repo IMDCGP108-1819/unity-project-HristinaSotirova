@@ -182,11 +182,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138060283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.35, y: 3.6, z: -0.087175}
-  m_LocalScale: {x: 2.2765703, y: 1.9571307, z: 1.7996604}
+  m_LocalPosition: {x: -0.35, y: 3.6, z: 0}
+  m_LocalScale: {x: 2.2765703, y: 1.9571307, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -307,13 +307,14 @@ GameObject:
   - component: {fileID: 2056436418}
   - component: {fileID: 2056436420}
   - component: {fileID: 2056436417}
+  - component: {fileID: 2056436421}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &2056436414
 Animator:
   serializedVersion: 3
@@ -390,7 +391,7 @@ Transform:
   m_Children:
   - {fileID: 995896689}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2056436417
 MonoBehaviour:
@@ -455,10 +456,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875260de0839c024f8d7b9ba8986a6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 50378286760141232, guid: 5bbde6fcb5a1efb449158d7c0ef2e815, type: 2}
-  shot: {fileID: 1443723856718816, guid: 5bbde6fcb5a1efb449158d7c0ef2e815, type: 2}
+  shot: {fileID: 1397136848448608, guid: 5cccc3c734551ca4889289dd18836b9e, type: 2}
   shotSpawn: {fileID: 995896689}
-  spawnTime: 0.25
+  spawnTime: 0.5
+--- !u!114 &2056436421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2056436413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6acba2134dd4a4743a10b5379e21f889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+--- !u!1001 &2068454109
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.5106329
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.572149
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516749358845692, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 213cf8ce103ecdf4f818ead48d47a452, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &2103640360
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,9 +540,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9087beb8ad4fae44ba4aabd80db8d46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 1059026085916138, guid: 5dfa31498e9553b498ca3200e9a65450, type: 2}
+  hazards:
+  - {fileID: 1059026085916138, guid: 5dfa31498e9553b498ca3200e9a65450, type: 2}
+  - {fileID: 1953774793004378, guid: cbbee773fe5957344bfc34f986030da0, type: 2}
+  - {fileID: 1140237733699888, guid: feccef29572443649ae8e5c15b78a1ba, type: 2}
   spawnValues: {x: 2, y: 9.15}
-  hazardCount: 10
+  hazardCount: 5
   spawnWait: 0.5
   startWait: 1
   waveWait: 4
@@ -503,5 +560,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

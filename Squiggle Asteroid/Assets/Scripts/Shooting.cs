@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour {
 
-    public Rigidbody2D rb;
     public GameObject shot;
     public Transform shotSpawn;
     public float spawnTime;
 
+    //code creates a consistant stream of shots
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("Shot", spawnTime, spawnTime);
     }
 
+    //code spawns shots and has them self-destruct over time
     void Shot()
     {
         GameObject item = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);

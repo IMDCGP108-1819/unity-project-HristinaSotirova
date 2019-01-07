@@ -6,7 +6,7 @@ public class Shot : MonoBehaviour
 {
 
     public float speed;
-    public int damage = 1;
+    public int damage;
     private Rigidbody2D rb;
 
     void Start () {
@@ -16,10 +16,10 @@ public class Shot : MonoBehaviour
         rb.AddForce(movement * speed);
        
     }
-	
-    void OnTriggerEnter2D (Collider2D hitInfo)
-    {
-        Hazard hazard = hitInfo.GetComponent<Hazard>();
+
+     void OnTriggerEnter2D (Collider2D hitInfo)
+    {    
+        HazardHealth hazard = hitInfo.GetComponent<HazardHealth>();
         if (hazard != null)
         {
             hazard.TakeDamage(damage);
