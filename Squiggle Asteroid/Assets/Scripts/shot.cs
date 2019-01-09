@@ -9,7 +9,8 @@ public class Shot : MonoBehaviour
     public int damage;
     private Rigidbody2D rb;
 
-    void Start () {
+    void Start ()
+    {
 
         rb = GetComponent<Rigidbody2D>();
         Vector2 movement = new Vector2(0.0f, 3);
@@ -18,13 +19,13 @@ public class Shot : MonoBehaviour
     }
 
      void OnTriggerEnter2D (Collider2D hitInfo)
-    {    
+     {    
         HazardHealth hazard = hitInfo.GetComponent<HazardHealth>();
         if (hazard != null)
         {
             hazard.TakeDamage(damage);
         }
         Destroy(gameObject);
-    }
+     }
 
 }

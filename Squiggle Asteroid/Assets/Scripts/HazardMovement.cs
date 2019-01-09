@@ -5,6 +5,7 @@ using UnityEngine;
 public class HazardMovement : MonoBehaviour
 {
 
+    public int damage;
     public float speed;
 
     private Rigidbody2D rb;
@@ -15,4 +16,16 @@ public class HazardMovement : MonoBehaviour
         Vector2 movement = new Vector2(0.0f, 1);
         rb.AddForce(movement * speed);
     }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        PlayerHealth player = hitInfo.GetComponent<PlayerHealth>();
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+        }
+        Destroy(gameObject);
+
+    }
+
 }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShot : MonoBehaviour {
+public class EnemyShot : MonoBehaviour
+{
 
     public float speed;
     public int damage;
@@ -17,21 +18,14 @@ public class EnemyShot : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D hit)
     {
-        if (other.tag == "HazardHealth")
-        {
-            return;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        PlayerHealth player = hitInfo.GetComponent<PlayerHealth>();
+        PlayerHealth player = hit.GetComponent<PlayerHealth>();
         if (player != null)
         {
             player.TakeDamage(damage);
         }
         Destroy(gameObject);
+
     }
 }

@@ -8,16 +8,18 @@ public class Boundary
     public float xMin, xMax, yMin, yMax;
 }
 
-public class EnemyMovement : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour
+{
 
     public float speed;
+    public int damage;
     private Rigidbody2D rb;
     public Boundary boundary;
 
     void Start()
     {
-        
-        
+
+
     }
 
     void FixedUpdate()
@@ -33,5 +35,21 @@ public class EnemyMovement : MonoBehaviour {
             );
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag ("Hazard")|| other.CompareTag("Enemy"))
+        {
+            return;
+        }
+     }
 
+    void OnTriggerEnter2D(Collider2D hit)
+    {
+
+        PlayerHealth player = hit.GetComponent<PlayerHealth>();
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+        }       
+    }
 }
