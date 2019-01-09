@@ -224,8 +224,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbe82c4428cb244ba2ec8b1f7fd4b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: []
-  hearts: {fileID: 0}
+  hearts:
+  - {fileID: 21300010, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
+  - {fileID: 21300008, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
+  - {fileID: 21300006, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
+  - {fileID: 21300004, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
+  - {fileID: 21300002, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
+  - {fileID: 21300000, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
+  Health: {fileID: 1948897877}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -351,7 +357,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 698448253
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &983893927
@@ -551,7 +557,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
+  m_Sprite: {fileID: 21300010, guid: 3a96b2e2d3f229f45b086dbd1be855a6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -759,7 +765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2103640361
 MonoBehaviour:
   m_ObjectHideFlags: 0

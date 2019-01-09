@@ -56,3 +56,6 @@ TagManager:
   - name: EnemyShots
     uniqueID: 581257815
     locked: 0
+  - name: UI
+    uniqueID: 698448253
+    locked: 0
