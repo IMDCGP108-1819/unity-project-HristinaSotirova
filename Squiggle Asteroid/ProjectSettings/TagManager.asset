@@ -19,7 +19,7 @@ TagManager:
   - EnemyShots
   - Asteroids
   - EnemyShip
-  - 
+  - text
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: EnemyShots
     uniqueID: 581257815
+    locked: 0
+  - name: BGmask
+    uniqueID: 293346011
     locked: 0
   - name: UI
     uniqueID: 698448253

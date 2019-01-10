@@ -7,9 +7,9 @@ public class HazardMovement : MonoBehaviour
 
     public int damage;
     public float speed;
-
     private Rigidbody2D rb;
 
+    //adds force to the game object so that it moves
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,6 +17,7 @@ public class HazardMovement : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
+    //upon collision with the player deals damage to them
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         PlayerHealth player = hitInfo.GetComponent<PlayerHealth>();
@@ -24,8 +25,5 @@ public class HazardMovement : MonoBehaviour
         {
             player.TakeDamage(damage);
         }
-        Destroy(gameObject);
-
     }
-
 }

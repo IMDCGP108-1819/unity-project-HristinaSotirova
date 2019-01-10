@@ -5,7 +5,7 @@ using UnityEngine;
 public class HazardHealth : MonoBehaviour
 {
 
-    //code establishes how much health hazards have and how they are destroyed
+    //code establishes how much health hazards have and how they take damage
     public int health;
 
     public void TakeDamage(int damage)
@@ -18,6 +18,7 @@ public class HazardHealth : MonoBehaviour
         }
     }
 
+    //when the object dies it is destroyed
     void Die()
     {
             Destroy(gameObject);

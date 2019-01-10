@@ -6,8 +6,8 @@ public class DestroyByTime : MonoBehaviour {
 
     public float lifetime;
 
-	void Start () {
+    //destroys game objects after set amount of time
+    void Start () {
         Destroy(gameObject, lifetime);
-	}
-	
+	}	
 }

@@ -8,6 +8,7 @@ public class RandomRotation : MonoBehaviour
     public float rotationSpeed;
     public float rotationTime;
 
+    //invokes ChangeRotation for the amount of time set to the rotationTime variable
     void Start()
     {
         Invoke("ChangeRotation", rotationTime);
@@ -22,7 +23,7 @@ public class RandomRotation : MonoBehaviour
         Invoke("ChangeRotation", rotationTime);
     }
 
-
+    //makes the asteroids rotate based on the value of the rotationSpeed variable
     void Update()
     {
 

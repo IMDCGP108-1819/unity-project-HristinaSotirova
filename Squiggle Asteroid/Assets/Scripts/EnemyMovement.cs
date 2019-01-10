@@ -16,12 +16,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb;
     public Boundary boundary;
 
-    void Start()
-    {
-
-
-    }
-
+    //adds force to the game objects so that it moves; keeps game object within the play field
     void FixedUpdate()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,14 +30,7 @@ public class EnemyMovement : MonoBehaviour
             );
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag ("Hazard")|| other.CompareTag("Enemy"))
-        {
-            return;
-        }
-     }
-
+    //upon collision with the player deals damage to them
     void OnTriggerEnter2D(Collider2D hit)
     {
 

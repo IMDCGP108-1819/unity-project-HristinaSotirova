@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float waveWait;
 
+    //upon starting the game begins the coroutine that spawns the enemies
     void Start()
     {
         StartCoroutine (SpawnWaves());
     }
 
+    //coroutine that spawns a set amount of enemies from an array of prefabs, with a pause between waves
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
@@ -31,8 +34,5 @@ public class GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
         }
-    }
-
-	
-	
+    }	
 }

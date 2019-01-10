@@ -9,16 +9,16 @@ public class Shot : MonoBehaviour
     public int damage;
     private Rigidbody2D rb;
 
+    //adds force to the shots so that they move
     void Start ()
     {
-
         rb = GetComponent<Rigidbody2D>();
         Vector2 movement = new Vector2(0.0f, 3);
-        rb.AddForce(movement * speed);
-       
+        rb.AddForce(movement * speed);       
     }
 
-     void OnTriggerEnter2D (Collider2D hitInfo)
+    //upon collision with hazards deals damage to hazards and destroys the shot game object
+    void OnTriggerEnter2D (Collider2D hitInfo)
      {    
         HazardHealth hazard = hitInfo.GetComponent<HazardHealth>();
         if (hazard != null)

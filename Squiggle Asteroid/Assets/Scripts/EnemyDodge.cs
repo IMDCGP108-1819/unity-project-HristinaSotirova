@@ -13,6 +13,7 @@ public class EnemyDodge : MonoBehaviour {
     private float movement;
     private Rigidbody2D rb;
 
+    //sets the speed of the enemy and starts coroutine
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,6 +21,7 @@ public class EnemyDodge : MonoBehaviour {
         StartCoroutine(Move());
     }
 
+    //a coroutine that makes the enemies move to the left or right based on their position in relation to the 0 on the y axis
     IEnumerator Move()
     {
         yield return new WaitForSeconds(Random.Range(startWait.x, startWait.y));
@@ -33,6 +35,7 @@ public class EnemyDodge : MonoBehaviour {
         }
     }
 
+    //eases the enemies into the dodge
     void FixedUpdate()
     {
         float newMovement = Mathf.MoveTowards(rb.velocity.x, movement, Time.deltaTime * smoothing);

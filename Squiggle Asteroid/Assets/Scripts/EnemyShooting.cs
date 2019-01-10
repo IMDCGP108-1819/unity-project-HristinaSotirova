@@ -9,11 +9,13 @@ public class EnemyShooting : MonoBehaviour {
     public float fireRate;
     public float delay;
 
+    //creates endless stream of shots with a set rate with a delay after each shot
     void Start()
     {
         InvokeRepeating("Fire", delay, fireRate);
     }
 
+    //instantiates shot prefabs at shot spawn location
     void Fire()
     {
         GameObject item = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
